@@ -1,97 +1,131 @@
-# Python
+# =============================================================
+# Boilerplate .gitignore for Python (FastAPI + uv) + Next.js apps
+# =============================================================
+
+# ---------- Secrets & environment ----------
+# Never commit real secrets. Commit a .env.example instead.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# ---------- Python ----------
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
 *.egg
+*.egg-info/
+.eggs/
 MANIFEST
+# Python build output (anchored to backend so it can't hide frontend/src/lib etc.)
+backend/build/
+backend/dist/
+backend/wheels/
 
 # Virtual environments
-.env
-.venv
-env/
+.venv/
 venv/
+env/
 ENV/
 
-# UV
+# uv / pip
 .uv/
+pip-log.txt
+pip-delete-this-directory.txt
 
-# FastAPI / Python web
-*.log
-local_settings.py
-instance/
+# Type checkers & linters
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.pytype/
+.dmypy.json
+dmypy.json
 
-# Testing
+# ---------- Python testing / coverage ----------
+.pytest_cache/
 .tox/
 .nox/
+.hypothesis/
 .coverage
 .coverage.*
+coverage.xml
 htmlcov/
-.pytest_cache/
-.hypothesis/
+*.cover
 
 # Jupyter
-.ipynb_checkpoints
+.ipynb_checkpoints/
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-.project
-.pydevproject
-.settings/
+# ---------- Node / Next.js ----------
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.npm/
+.eslintcache
 
-# Next.js
+# Next.js build output
 .next/
 out/
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# Next.js production
-build/
-
-# Vercel
-.vercel
+frontend/build/
 
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-# Environment files
-.env*.local
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Frontend testing
+coverage/
+/frontend/test-results/
+/frontend/playwright-report/
+/frontend/playwright/.cache/
 
-# OS
+# Vercel / Turbo
+.vercel
+.turbo
+
+# ---------- Logs ----------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---------- Local databases ----------
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ---------- Docker ----------
+docker-compose.override.yml
+
+# ---------- Editors & IDEs ----------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Claude Code local (per-user) settings
+.claude/settings.local.json
+
+# ---------- OS ----------
 .DS_Store
 Thumbs.db
+desktop.ini
+ehthumbs.db
 
-# Misc
+# ---------- Misc ----------
 *.bak
 *.tmp
 *.temp
-
-# Database
-*.db
+.cache/
