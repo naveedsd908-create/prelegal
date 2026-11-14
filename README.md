@@ -2,6 +2,8 @@
 
 A platform for drafting common legal agreements.
 
+> **Status: In progress.** This project is under active development and is expected to be completed within 1 week (by 21 November 2026). Some features and documentation may be incomplete or change before then.
+
 This is the result of me (Ed) running the Jira tickets through Claude Code. But you should do this yourself!
 
 See the skill in the .claude directory.
